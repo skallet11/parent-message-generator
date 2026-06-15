@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Pretendard", "Arial", sans-serif;
+  background: linear-gradient(135deg, #fff0f6, #edf6ff, #f5fff4);
+  min-height: 100vh;
+  padding: 28px 16px;
+  color: #333;
+}
+
+.app {
+  max-width: 860px;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px 22px;
+  border-radius: 30px;
+  box-shadow: 0 14px 35px rgba(110, 120, 150, 0.16);
+  margin-bottom: 22px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.header p {
+  color: #666;
+  margin: 12px 0;
+}
+
+.badge {
+  display: inline-block;
+  background: #ffe1ef;
+  color: #d94f8c;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.card, .message-card {
+  background: rgba(255, 255, 255, 0.94);
+  padding: 28px;
+  border-radius: 28px;
+  box-shadow: 0 14px 35px rgba(110, 120, 150, 0.16);
+}
+
+label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: 800;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e5dce6;
+  border-radius: 16px;
+  font-size: 16px;
+  background: #fff;
+}
+
+textarea {
+  min-height: 95px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+#finalMessage {
+  min-height: 260px;
+  background: #fafbff;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #ff8fbd;
+  box-shadow: 0 0 0 4px rgba(255, 143, 189, 0.18);
+}
+
+button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ff8fbd, #78aaff);
+  color: white;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.hidden {
+  display: none;
+}
+
+.result {
+  margin-top: 24px;
+}
+
+.message-card h3 {
+  margin-top: 0;
+  color: #e85f9c;
+}
+
+.guide {
+  color: #777;
+  font-size: 14px;
+}
+
+.small-btn {
+  width: auto;
+  margin-right: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  background: #555;
+}
+
+.pink {
+  background: #e85f9c;
+}
