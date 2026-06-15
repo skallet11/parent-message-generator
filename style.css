@@ -45,7 +45,8 @@ body {
   font-size: 14px;
 }
 
-.card, .message-card {
+.card,
+.message-card {
   background: rgba(255, 255, 255, 0.94);
   padding: 28px;
   border-radius: 28px;
@@ -58,7 +59,9 @@ label {
   font-weight: 800;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   padding: 14px;
   border: 1px solid #e5dce6;
@@ -78,7 +81,9 @@ textarea {
   background: #fafbff;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
   border-color: #ff8fbd;
   box-shadow: 0 0 0 4px rgba(255, 143, 189, 0.18);
@@ -119,14 +124,31 @@ button:hover {
   font-size: 14px;
 }
 
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
 .small-btn {
   width: auto;
-  margin-right: 8px;
+  margin-top: 0;
   padding: 10px 14px;
   font-size: 14px;
   background: #555;
+  border-radius: 14px;
 }
 
 .pink {
   background: #e85f9c;
+}
+
+.school-btn {
+  margin-top: 18px;
+  background: #19b45a;
+}
+
+.school-btn:hover {
+  background: #14984c;
 }

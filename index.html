@@ -3,32 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>학부모 알림장 생성기</title>
+
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
+
 <body>
   <main class="app">
+
     <section class="header">
-      <h1>🌷 학부모 알림장 생성기</h1>
-      <p>상황을 선택하고 문장을 직접 수정한 뒤 번역할 수 있습니다.</p>
+      <div class="emoji">🌷</div>
+      <h1>학부모 알림장 생성기</h1>
+      <p>
+        상황을 선택하고 문장을 만든 뒤 직접 수정하여 복사하거나 번역할 수 있습니다.
+      </p>
       <span class="badge">무료 모드 · API 비용 없음</span>
     </section>
 
     <section class="card">
-      <label>학생 이름</label>
-      <input id="studentName" placeholder="예: 세나" />
+      <label for="studentName">학생 이름</label>
+      <input id="studentName" type="text" placeholder="예: 세나" />
 
-      <label>시간대</label>
+      <label for="time">시간대</label>
       <select id="time">
         <option value="">선택 안 함</option>
-        <option>오늘 오전</option>
-        <option>오늘 점심시간</option>
-        <option>오늘 오후</option>
-        <option>하교 전</option>
-        <option>방과 후</option>
+        <option value="오늘 오전">오늘 오전</option>
+        <option value="오늘 점심시간">오늘 점심시간</option>
+        <option value="오늘 오후">오늘 오후</option>
+        <option value="하교 전">하교 전</option>
+        <option value="방과 후">방과 후</option>
       </select>
 
-      <label>카테고리</label>
+      <label for="category">카테고리</label>
       <select id="category" onchange="updateSituations()">
         <option value="safety">안전 / 다침</option>
         <option value="health">보건 / 건강</option>
@@ -39,15 +47,19 @@
         <option value="home">가정 협조</option>
       </select>
 
-      <label>상황 선택</label>
+      <label for="situation">상황 선택</label>
       <select id="situation" onchange="toggleSupplyBox()"></select>
 
       <div id="supplyBox" class="hidden">
-        <label>가져와야 할 준비물</label>
-        <input id="supplyItem" placeholder="예: 색연필, 풀, 가위, 여벌 옷" />
+        <label for="supplyItem">가져와야 할 준비물</label>
+        <input
+          id="supplyItem"
+          type="text"
+          placeholder="예: 색연필, 풀, 가위, 여벌 옷"
+        />
       </div>
 
-      <label>말투 톤</label>
+      <label for="tone">말투 톤</label>
       <select id="tone">
         <option value="basic">기본 안내 톤</option>
         <option value="warm">따뜻한 톤</option>
@@ -55,24 +67,58 @@
         <option value="short">간단한 톤</option>
       </select>
 
-      <label>추가 내용</label>
-      <textarea id="extra" placeholder="예: 오른쪽 무릎이 조금 까졌고 보건실에서 소독 후 밴드를 붙였습니다."></textarea>
+      <label for="extra">추가 내용</label>
+      <textarea
+        id="extra"
+        placeholder="예: 오른쪽 무릎이 조금 까졌고 보건실에서 소독 후 밴드를 붙였습니다."
+      ></textarea>
 
-      <button onclick="generateMessage()">✨ 알림장 예시 생성</button>
+      <button class="main-btn" onclick="generateMessage()">
+        ✨ 알림장 예시 생성
+      </button>
     </section>
 
     <section id="result" class="result hidden">
       <div class="message-card">
-        <h3>🇰🇷 생성된 문장</h3>
-        <p class="guide">아래 문장을 직접 고친 뒤 번역 버튼을 누르세요.</p>
+        <h2>🇰🇷 생성된 문장</h2>
+        <p class="guide">
+          아래 문장은 직접 수정할 수 있습니다. 수정한 문장 그대로 복사하거나 번역할 수 있어요.
+        </p>
+
         <textarea id="finalMessage"></textarea>
 
-        <button class="small-btn" onclick="copyFinalMessage()">복사하기</button>
-        <button class="small-btn pink" onclick="openTranslate('en')">영어 번역</button>
-        <button class="small-btn pink" onclick="openTranslate('zh-CN')">중국어 번역</button>
-        <button class="small-btn pink" onclick="openTranslate('tr')">터키어 번역</button>
+        <div class="button-row">
+          <button class="small-btn gray" onclick="copyFinalMessage()">
+            📋 복사하기
+          </button>
+
+          <button class="small-btn pink" onclick="openTranslate('en')">
+            🇺🇸 영어
+          </button>
+
+          <button class="small-btn pink" onclick="openTranslate('zh-CN')">
+            🇨🇳 중국어
+          </button>
+
+          <button class="small-btn pink" onclick="openTranslate('tr')">
+            🇹🇷 터키어
+          </button>
+
+          <button class="small-btn pink" onclick="openTranslate('vi')">
+            🇻🇳 베트남어
+          </button>
+        </div>
+
+        <button class="school-btn" onclick="openSchoolBell()">
+          🟢 학교종이 열기
+        </button>
+
+        <p class="notice">
+          학교종이 버튼을 누르면 현재 문장이 자동 복사된 뒤 학교종이 페이지가 열립니다.
+        </p>
       </div>
     </section>
+
   </main>
 
   <script src="script.js"></script>

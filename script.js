@@ -316,4 +316,17 @@ function openTranslate(lang) {
   window.open(url, "_blank");
 }
 
+function openSchoolBell() {
+  const text = document.getElementById("finalMessage").value;
+
+  if (text.trim()) {
+    navigator.clipboard.writeText(text);
+    alert("알림장 문장이 복사되었습니다.\n학교종이에서 붙여넣기 하세요.");
+  } else {
+    alert("학교종이로 이동합니다.");
+  }
+
+  window.open("https://schoolbell-e.com/ko/main/home", "_blank");
+}
+
 window.onload = updateSituations;
